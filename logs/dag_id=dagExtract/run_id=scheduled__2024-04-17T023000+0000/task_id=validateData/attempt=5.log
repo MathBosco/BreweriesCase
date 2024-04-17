@@ -1,0 +1,25 @@
+[2024-04-17T04:25:14.926+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-17T04:25:14.958+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagExtract.validateData scheduled__2024-04-17T02:30:00+00:00 [queued]>
+[2024-04-17T04:25:14.967+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagExtract.validateData scheduled__2024-04-17T02:30:00+00:00 [queued]>
+[2024-04-17T04:25:14.968+0000] {taskinstance.py:2303} INFO - Starting attempt 5 of 5
+[2024-04-17T04:25:14.988+0000] {taskinstance.py:2327} INFO - Executing <Task(BranchPythonOperator): validateData> on 2024-04-17 02:30:00+00:00
+[2024-04-17T04:25:14.996+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=286) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-17T04:25:14.999+0000] {standard_task_runner.py:63} INFO - Started process 288 to run task
+[2024-04-17T04:25:15.000+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagExtract', 'validateData', 'scheduled__2024-04-17T02:30:00+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/FirstDag.py', '--cfg-path', '/tmp/tmps2_l6xyo']
+[2024-04-17T04:25:15.001+0000] {standard_task_runner.py:91} INFO - Job 98: Subtask validateData
+[2024-04-17T04:25:15.087+0000] {task_command.py:426} INFO - Running <TaskInstance: dagExtract.validateData scheduled__2024-04-17T02:30:00+00:00 [running]> on host 960ed0fb8e64
+[2024-04-17T04:25:15.218+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagExtract' AIRFLOW_CTX_TASK_ID='validateData' AIRFLOW_CTX_EXECUTION_DATE='2024-04-17T02:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-17T02:30:00+00:00'
+[2024-04-17T04:25:15.220+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-17T04:25:15.221+0000] {baseoperator.py:399} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2024-04-17T04:25:15.308+0000] {logging_mixin.py:188} INFO - Df Rows: 50
+[2024-04-17T04:25:15.309+0000] {python.py:237} INFO - Done. Returned value was: persistData
+[2024-04-17T04:25:15.310+0000] {branch.py:36} INFO - Branch into persistData
+[2024-04-17T04:25:15.310+0000] {skipmixin.py:178} INFO - Following branch persistData
+[2024-04-17T04:25:15.339+0000] {skipmixin.py:246} INFO - Skipping tasks [('exceptionData', -1)]
+[2024-04-17T04:25:15.376+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-17T04:25:15.406+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagExtract, task_id=validateData, execution_date=20240417T023000, start_date=20240417T042514, end_date=20240417T042515
+[2024-04-17T04:25:15.455+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-17T04:25:15.501+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-17T04:25:15.506+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

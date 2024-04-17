@@ -1,0 +1,2 @@
+[2024-04-17T04:40:54.818+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: dagExtract.extractApi scheduled__2024-04-17T03:30:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
+[2024-04-17T04:41:22.134+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: dagExtract.extractApi scheduled__2024-04-17T03:30:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
