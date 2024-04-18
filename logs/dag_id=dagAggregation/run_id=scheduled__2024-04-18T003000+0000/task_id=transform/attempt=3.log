@@ -1,0 +1,27 @@
+[2024-04-18T03:11:23.847+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T03:11:23.880+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagAggregation.transform scheduled__2024-04-18T00:30:00+00:00 [queued]>
+[2024-04-18T03:11:23.890+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagAggregation.transform scheduled__2024-04-18T00:30:00+00:00 [queued]>
+[2024-04-18T03:11:23.891+0000] {taskinstance.py:2303} INFO - Starting attempt 3 of 3
+[2024-04-18T03:11:24.047+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 00:30:00+00:00
+[2024-04-18T03:11:24.062+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=5368) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T03:11:24.067+0000] {standard_task_runner.py:63} INFO - Started process 5370 to run task
+[2024-04-18T03:11:24.066+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagAggregation', 'transform', 'scheduled__2024-04-18T00:30:00+00:00', '--job-id', '279', '--raw', '--subdir', 'DAGS_FOLDER/AggData.py', '--cfg-path', '/tmp/tmpgqdibske']
+[2024-04-18T03:11:24.069+0000] {standard_task_runner.py:91} INFO - Job 279: Subtask transform
+[2024-04-18T03:11:24.142+0000] {task_command.py:426} INFO - Running <TaskInstance: dagAggregation.transform scheduled__2024-04-18T00:30:00+00:00 [running]> on host 0761b779d565
+[2024-04-18T03:11:24.265+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagAggregation' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T00:30:00+00:00'
+[2024-04-18T03:11:24.267+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T03:11:24.373+0000] {logging_mixin.py:188} INFO -   brewery_type  count
+0      brewpub     18
+1       closed      4
+2     contract      2
+3        large     14
+4        micro     60
+5   proprietor      2
+[2024-04-18T03:11:24.374+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-18T03:11:24.375+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T03:11:24.392+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagAggregation, task_id=transform, execution_date=20240418T003000, start_date=20240418T031123, end_date=20240418T031124
+[2024-04-18T03:11:24.445+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T03:11:24.477+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T03:11:24.485+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

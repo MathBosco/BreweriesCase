@@ -1,0 +1,33 @@
+[2024-04-18T03:50:50.434+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T03:50:50.465+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagAggregation.input scheduled__2024-04-18T01:30:00+00:00 [queued]>
+[2024-04-18T03:50:50.475+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagAggregation.input scheduled__2024-04-18T01:30:00+00:00 [queued]>
+[2024-04-18T03:50:50.477+0000] {taskinstance.py:2303} INFO - Starting attempt 11 of 11
+[2024-04-18T03:50:50.496+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): input> on 2024-04-18 01:30:00+00:00
+[2024-04-18T03:50:50.504+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6612) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T03:50:50.506+0000] {standard_task_runner.py:63} INFO - Started process 6614 to run task
+[2024-04-18T03:50:50.510+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagAggregation', 'input', 'scheduled__2024-04-18T01:30:00+00:00', '--job-id', '323', '--raw', '--subdir', 'DAGS_FOLDER/AggData.py', '--cfg-path', '/tmp/tmp4ptlnew6']
+[2024-04-18T03:50:50.513+0000] {standard_task_runner.py:91} INFO - Job 323: Subtask input
+[2024-04-18T03:50:50.591+0000] {task_command.py:426} INFO - Running <TaskInstance: dagAggregation.input scheduled__2024-04-18T01:30:00+00:00 [running]> on host 0761b779d565
+[2024-04-18T03:50:50.740+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagAggregation' AIRFLOW_CTX_TASK_ID='input' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T01:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='11' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T01:30:00+00:00'
+[2024-04-18T03:50:50.742+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T03:50:51.967+0000] {python.py:237} INFO - Done. Returned value was:                                       id  ...            city
+19  e5f3e72a-fee2-4813-82cf-f2e53b439ae6  ...       Killeshin
+19  e5f3e72a-fee2-4813-82cf-f2e53b439ae6  ...       Killeshin
+21  fb94830f-6196-4f59-9189-c9060b778085  ...         Gilbert
+21  fb94830f-6196-4f59-9189-c9060b778085  ...         Gilbert
+22  0faa0fb2-fffa-416d-9eab-46f67477c8ef  ...            Mesa
+..                                   ...  ...             ...
+12  03118499-a3d0-4c22-860d-4529509ae095  ...        Quilcene
+44  1a1b2165-73ed-40aa-b89b-56794d140f22  ...       Milwaukee
+44  1a1b2165-73ed-40aa-b89b-56794d140f22  ...       Milwaukee
+2   34e8c68b-6146-453f-a4b9-1f6cd99a5ada  ...  Mount Pleasant
+2   34e8c68b-6146-453f-a4b9-1f6cd99a5ada  ...  Mount Pleasant
+
+[100 rows x 16 columns]
+[2024-04-18T03:50:52.023+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T03:50:52.090+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagAggregation, task_id=input, execution_date=20240418T013000, start_date=20240418T035050, end_date=20240418T035052
+[2024-04-18T03:50:52.288+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T03:50:52.319+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T03:50:52.324+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

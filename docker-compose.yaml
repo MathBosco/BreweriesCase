@@ -82,6 +82,8 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/datalake/bronze:/opt/airflow/datalake/bronze
     - ${AIRFLOW_PROJ_DIR:-.}/datalake/silver:/opt/airflow/datalake/silver
     - ${AIRFLOW_PROJ_DIR:-.}/datalake/gold:/opt/airflow/datalake/gold
+    - ${AIRFLOW_PROJ_DIR:-.}/datalake/gold/vwByType:/opt/airflow/datalake/gold/vwByType
+    - ${AIRFLOW_PROJ_DIR:-.}/datalake/gold/vwByLocation:/opt/airflow/datalake/gold/vwByLocation
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
