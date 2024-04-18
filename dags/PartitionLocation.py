@@ -29,8 +29,14 @@ def ReadBronze():
         "street": str
     }
 
+    # Get actual date
+    dt = datetime.now()
+
+    # Format date
+    format_dt = dt.strftime('%Y%m%d')
+
     # Read file with schema
-    df = pd.read_json('datalake/bronze/20240417.json', dtype=schema)
+    df = pd.read_json(f'datalake/bronze/{format_dt}.json', dtype=schema)
 
     return df
    
