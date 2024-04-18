@@ -1,0 +1,72 @@
+[2024-04-18T16:25:29.134+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T16:25:29.159+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagPartition.transform manual__2024-04-18T16:25:17.175380+00:00 [queued]>
+[2024-04-18T16:25:29.170+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagPartition.transform manual__2024-04-18T16:25:17.175380+00:00 [queued]>
+[2024-04-18T16:25:29.211+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-18T16:25:29.581+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 16:25:17.175380+00:00
+[2024-04-18T16:25:29.594+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=444) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T16:25:29.598+0000] {standard_task_runner.py:63} INFO - Started process 446 to run task
+[2024-04-18T16:25:29.599+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagPartition', 'transform', 'manual__2024-04-18T16:25:17.175380+00:00', '--job-id', '389', '--raw', '--subdir', 'DAGS_FOLDER/PartitionLocation.py', '--cfg-path', '/tmp/tmp8g9wp2ll']
+[2024-04-18T16:25:29.602+0000] {standard_task_runner.py:91} INFO - Job 389: Subtask transform
+[2024-04-18T16:25:30.159+0000] {task_command.py:426} INFO - Running <TaskInstance: dagPartition.transform manual__2024-04-18T16:25:17.175380+00:00 [running]> on host 1a64d95cdf4a
+[2024-04-18T16:25:30.853+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagPartition' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T16:25:17.175380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-18T16:25:17.175380+00:00'
+[2024-04-18T16:25:30.856+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T16:25:30.981+0000] {python.py:237} INFO - Done. Returned value was:                                       id  ... dt_process
+0   5128df48-79fc-4f0f-8b52-d06be54d0cec  ...   20240418
+1   9c5a66c8-cc13-416f-a5d9-0a769c87d318  ...   20240418
+2   34e8c68b-6146-453f-a4b9-1f6cd99a5ada  ...   20240418
+3   ef970757-fe42-416f-931d-722451f1f59c  ...   20240418
+4   6d14b220-8926-4521-8d19-b98a2d6ec3db  ...   20240418
+5   e2e78bd8-80ff-4a61-a65c-3bfbd9d76ce2  ...   20240418
+6   e432899b-7f58-455f-9c7b-9a6e2130a1e0  ...   20240418
+7   9f1852da-c312-42da-9a31-097bac81c4c0  ...   20240418
+8   ea4f30c0-bce6-416b-8904-fab4055a7362  ...   20240418
+9   1988eb86-f0a2-4674-ba04-02454efa0d31  ...   20240418
+10  1ecc330f-6275-42a5-b14e-00adbed62752  ...   20240418
+11  7531dbd8-afc9-4b5b-95bc-7ece7f2c0bf3  ...   20240418
+12  03118499-a3d0-4c22-860d-4529509ae095  ...   20240418
+13  5ae467af-66dc-4d7f-8839-44228f89b596  ...   20240418
+14  4ffda196-dd59-44a5-9eeb-5f7fd4b58f5a  ...   20240418
+15  42aa37d5-8384-4ffe-8c81-7c982eff0384  ...   20240418
+16  232e8f62-9afc-45f5-b4bc-582c26b5c43b  ...   20240418
+17  08f78223-24f8-4b71-b381-ea19a5bd82df  ...   20240418
+18  58293321-14ae-49d7-9a7b-08436c9e63a6  ...   20240418
+19  e5f3e72a-fee2-4813-82cf-f2e53b439ae6  ...   20240418
+20  d81ff708-b5d2-478f-af6a-6d40f5beb9ac  ...   20240418
+21  fb94830f-6196-4f59-9189-c9060b778085  ...   20240418
+22  0faa0fb2-fffa-416d-9eab-46f67477c8ef  ...   20240418
+23  e54c2f02-acd6-4172-861d-fcfa54c8701a  ...   20240418
+24  d5cb896d-3e99-4e19-9693-5e06ce987e53  ...   20240418
+25  06e9fffb-e820-45c9-b107-b52b51013e8f  ...   20240418
+26  50521ef7-f543-4c5d-98b1-0d0ee1a2be01  ...   20240418
+27  950180bd-29c9-46b3-ad0c-e6f09799ec7f  ...   20240418
+28  45119c56-345b-4adc-b481-c5cf7bfe98c4  ...   20240418
+29  936c3d7e-5d54-4459-b72c-117cdda059b4  ...   20240418
+30  5c53b314-ebab-4e3e-89be-e4139d9318ae  ...   20240418
+31  4788221a-a03b-458c-9084-4cadd69ade6d  ...   20240418
+32  b7b68d22-5045-4501-b9bf-ec94946eaffc  ...   20240418
+33  4b677b60-fef1-42e2-90ef-dadc1bd7fb06  ...   20240418
+34  6c53984f-fac1-4ea7-9c44-44e25897c71a  ...   20240418
+35  85192a9c-58a4-48c3-bd9d-496d09d22aa3  ...   20240418
+36  284b44f8-6ccb-4cd6-8d06-f2ad882a47c3  ...   20240418
+37  ee6d39c6-092f-4623-8099-5b8643f70dbe  ...   20240418
+38  d35b40b0-a3ff-4878-a6ee-9caa2149b521  ...   20240418
+39  84bd3b3c-bd2d-4e07-bc31-b43a8c8ebf4c  ...   20240418
+40  f41a0c47-ba9b-4547-bfed-fcbefe0fc74b  ...   20240418
+41  84d621c4-81a5-44e6-aca7-1566c2e67cc0  ...   20240418
+42  896f26a1-d80e-4790-9287-026a86c1799d  ...   20240418
+43  46839a79-b7bf-4733-b91b-ce116d062a57  ...   20240418
+44  1a1b2165-73ed-40aa-b89b-56794d140f22  ...   20240418
+45  fe6b9893-b93e-43d5-a9f6-3e0c89a3f13c  ...   20240418
+46  b51f3cdf-60ff-4ae1-94a7-76906c7d62eb  ...   20240418
+47  add7f978-942e-4d56-b209-c80837a51d69  ...   20240418
+48  dbde8235-2b55-4d8b-8b1c-438155abe104  ...   20240418
+49  4f4b5b34-d572-4dff-a18f-47e507c073e6  ...   20240418
+
+[50 rows x 17 columns]
+[2024-04-18T16:25:31.063+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T16:25:31.144+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagPartition, task_id=transform, execution_date=20240418T162517, start_date=20240418T162529, end_date=20240418T162531
+[2024-04-18T16:25:31.303+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T16:25:31.362+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T16:25:31.539+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
