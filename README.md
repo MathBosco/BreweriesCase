@@ -6,6 +6,8 @@ The goal of this test is consuming data from an API, transforming and persisting
 into a data lake following the medallion architecture with three layers: raw data, curated data 
 partitioned by location, and an analytical aggregated layer.
 
+---
+
 ## Used Tecnologies
   - Docker
   - Airflow
