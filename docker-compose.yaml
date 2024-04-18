@@ -77,7 +77,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
+    - ${AIRFLOW_PROJ_DIR:-.}/functions:/opt/airflow/functions
     - ${AIRFLOW_PROJ_DIR:-.}/datalake:/opt/airflow/datalake
     - ${AIRFLOW_PROJ_DIR:-.}/datalake/bronze:/opt/airflow/datalake/bronze
     - ${AIRFLOW_PROJ_DIR:-.}/datalake/silver:/opt/airflow/datalake/silver

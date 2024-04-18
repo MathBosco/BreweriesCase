@@ -1,10 +1,17 @@
 from airflow import DAG
 from datetime import datetime
-from airflow.operators.python import PythonOperator, BranchPythonOperator
-from airflow.operators.bash import BashOperator
+from airflow.operators.python import PythonOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
+
 from datetime import datetime
 import pandas as pd
-import logging
+import sys
+import os
+
+scripts_dir = os.path.join(os.path.dirname(__file__), '..', 'dags')
+sys.path.append(scripts_dir)
+
+from Utils import *
 
 # Read data from Bronze Layer
 def ReadBronze():
@@ -46,14 +53,7 @@ def TransformationDf(ti):
     # Get output from input task
     df = ti.xcom_pull(task_ids = 'input')
 
-    # Get actual date
-    dt = datetime.now()
-
-    # Format date
-    format_dt = dt.strftime('%Y%m%d')
-
-    # Add colum data processed
-    df = df.assign(dt_process=format_dt)
+    df = AddDtProcess(df)
 
     # Remove blank spaces
     df['country'] = df['country'].str.replace(' ', '_')
@@ -71,7 +71,7 @@ def PersistData(ti):
     df.to_parquet('datalake/silver', partition_cols=['dt_process','country', 'state', 'city'], compression='gzip')
 
 # Dag Orchestration
-with DAG('dagPartition', start_date= datetime(2024,4,15),  schedule_interval = '30 * * * *', catchup = False) as dag:
+with DAG(dag_id='dagPartition', start_date= datetime(2024,4,15,7, 0, 0),  schedule_interval='@daily',  catchup = False) as dag:
 
     # Read data
     input = PythonOperator(
@@ -91,5 +91,11 @@ with DAG('dagPartition', start_date= datetime(2024,4,15),  schedule_interval = '
         python_callable = PersistData
     )   
 
+    triggerDag = TriggerDagRunOperator(
+        task_id='triggerDag',
+        trigger_dag_id='dagAggregations',
+        dag=dag
+    )
+
     # Orchestration
-    input >> transform >> output
+    input >> transform >> output >> triggerDag

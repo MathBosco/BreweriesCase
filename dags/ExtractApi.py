@@ -1,10 +1,19 @@
 from airflow import DAG
 from datetime import datetime
 from airflow.operators.python import PythonOperator, BranchPythonOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.bash import BashOperator
+
 from datetime import datetime
 import pandas as pd
 import requests
+import sys
+import os
+
+scripts_dir = os.path.join(os.path.dirname(__file__), '..', 'dags')
+sys.path.append(scripts_dir)
+
+from Utils import AddDtProcess
 
 # Extract data from Api
 # Retun a df with the request data
@@ -25,19 +34,6 @@ def ExtractApi():
     df = pd.DataFrame.from_dict(data)
     
     return df
-
-# Validate Data quality
-def ValidateData(ti):
-    df = ti.xcom_pull(task_ids = 'extractApi')
-
-    size = len(df)
-
-    print("Df Rows: " + str(size))
-
-    # Verify the number of rows 
-    if (size > 0):
-        return 'persistData'
-    return 'exceptionData'
 
 # Persist data on bronze layer
 def PersistData(ti):
@@ -61,7 +57,7 @@ def PersistData(ti):
 
 
 # Dag Orchestration
-with DAG('dagExtract', start_date= datetime(2024,4,15),  schedule_interval = '30 * * * *', catchup = False) as dag:
+with DAG('dagExtract', start_date= datetime(2024,4,15,6, 0, 0),  schedule_interval='@daily', catchup = False) as dag:
 
     # Extract data from Brewery API
     extractApi = PythonOperator(
@@ -69,23 +65,19 @@ with DAG('dagExtract', start_date= datetime(2024,4,15),  schedule_interval = '30
         python_callable = ExtractApi
     )
 
-    # Verify the data quality 
-    validateData = BranchPythonOperator(
-        task_id = 'validateData',
-        python_callable = ValidateData
-    )
-
+    
     # Persist data on bronze layer 
     persistData = PythonOperator(
         task_id = 'persistData',
         python_callable = PersistData
     )
 
-    # If the data quality's not good, shows a message
-    exceptionData = BashOperator(
-        task_id = 'exceptionData',
-        bash_command = 'Error to extract blank dataframe'
+    # Define a tarefa que desencadeará a execução da DAG d2
+    triggerDag = TriggerDagRunOperator(
+        task_id='triggerDag',
+        trigger_dag_id='dagPartition',
+        dag=dag
     )
 
     # Orchestration
-    extractApi >> validateData >> [persistData,exceptionData]
+    extractApi >> persistData >> triggerDag

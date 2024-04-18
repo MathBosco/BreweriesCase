@@ -1,0 +1,48 @@
+[2024-04-18T05:19:44.355+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T05:19:44.384+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagExtract.validateData manual__2024-04-18T05:19:36.245186+00:00 [queued]>
+[2024-04-18T05:19:44.395+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagExtract.validateData manual__2024-04-18T05:19:36.245186+00:00 [queued]>
+[2024-04-18T05:19:44.866+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-18T05:19:46.266+0000] {taskinstance.py:2327} INFO - Executing <Task(BranchPythonOperator): validateData> on 2024-04-18 05:19:36.245186+00:00
+[2024-04-18T05:19:46.278+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8018) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T05:19:46.281+0000] {standard_task_runner.py:63} INFO - Started process 8024 to run task
+[2024-04-18T05:19:46.285+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagExtract', 'validateData', 'manual__2024-04-18T05:19:36.245186+00:00', '--job-id', '347', '--raw', '--subdir', 'DAGS_FOLDER/ExtractApi.py', '--cfg-path', '/tmp/tmplszjarv8']
+[2024-04-18T05:19:46.289+0000] {standard_task_runner.py:91} INFO - Job 347: Subtask validateData
+[2024-04-18T05:19:46.801+0000] {task_command.py:426} INFO - Running <TaskInstance: dagExtract.validateData manual__2024-04-18T05:19:36.245186+00:00 [running]> on host 0761b779d565
+[2024-04-18T05:19:59.378+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagExtract' AIRFLOW_CTX_TASK_ID='validateData' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T05:19:36.245186+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-18T05:19:36.245186+00:00'
+[2024-04-18T05:19:59.381+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T05:19:59.382+0000] {baseoperator.py:399} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2024-04-18T05:19:59.405+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T05:19:59.406+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 269, in execute
+    return self.do_branch(context, super().execute(context))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ExtractApi.py", line 42, in ValidateData
+    size = len(df)
+           ^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2024-04-18T05:19:59.432+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=dagExtract, task_id=validateData, execution_date=20240418T051936, start_date=20240418T051944, end_date=20240418T051959
+[2024-04-18T05:19:59.457+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 347 for task validateData (object of type 'NoneType' has no len(); 8024)
+[2024-04-18T05:19:59.495+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-18T05:19:59.519+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T05:19:59.526+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

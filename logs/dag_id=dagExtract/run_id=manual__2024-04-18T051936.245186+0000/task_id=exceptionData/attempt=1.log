@@ -1,0 +1,39 @@
+[2024-04-18T05:19:43.388+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T05:19:43.433+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagExtract.exceptionData manual__2024-04-18T05:19:36.245186+00:00 [queued]>
+[2024-04-18T05:19:43.445+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagExtract.exceptionData manual__2024-04-18T05:19:36.245186+00:00 [queued]>
+[2024-04-18T05:19:43.535+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-18T05:19:44.310+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): exceptionData> on 2024-04-18 05:19:36.245186+00:00
+[2024-04-18T05:19:44.323+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8016) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T05:19:44.327+0000] {standard_task_runner.py:63} INFO - Started process 8023 to run task
+[2024-04-18T05:19:44.328+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagExtract', 'exceptionData', 'manual__2024-04-18T05:19:36.245186+00:00', '--job-id', '345', '--raw', '--subdir', 'DAGS_FOLDER/ExtractApi.py', '--cfg-path', '/tmp/tmp36q3ui5z']
+[2024-04-18T05:19:44.335+0000] {standard_task_runner.py:91} INFO - Job 345: Subtask exceptionData
+[2024-04-18T05:19:44.399+0000] {task_command.py:426} INFO - Running <TaskInstance: dagExtract.exceptionData manual__2024-04-18T05:19:36.245186+00:00 [running]> on host 0761b779d565
+[2024-04-18T05:19:46.296+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagExtract' AIRFLOW_CTX_TASK_ID='exceptionData' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T05:19:36.245186+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-18T05:19:36.245186+00:00'
+[2024-04-18T05:19:46.298+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T05:19:46.301+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-18T05:19:46.302+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'Error to extract blank dataframe']
+[2024-04-18T05:19:46.443+0000] {subprocess.py:86} INFO - Output:
+[2024-04-18T05:19:59.439+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: Error: command not found
+[2024-04-18T05:19:59.440+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-04-18T05:19:59.441+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T05:19:59.457+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-04-18T05:19:59.464+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=dagExtract, task_id=exceptionData, execution_date=20240418T051936, start_date=20240418T051943, end_date=20240418T051959
+[2024-04-18T05:19:59.492+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 345 for task exceptionData (Bash command failed. The command returned a non-zero exit code 127.; 8023)
+[2024-04-18T05:19:59.535+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-18T05:19:59.555+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T05:19:59.569+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

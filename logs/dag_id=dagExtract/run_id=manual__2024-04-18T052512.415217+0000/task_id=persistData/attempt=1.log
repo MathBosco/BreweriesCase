@@ -1,0 +1,22 @@
+[2024-04-18T05:25:19.520+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T05:25:19.555+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagExtract.persistData manual__2024-04-18T05:25:12.415217+00:00 [queued]>
+[2024-04-18T05:25:19.567+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagExtract.persistData manual__2024-04-18T05:25:12.415217+00:00 [queued]>
+[2024-04-18T05:25:19.568+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-18T05:25:19.588+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): persistData> on 2024-04-18 05:25:12.415217+00:00
+[2024-04-18T05:25:19.598+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8343) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T05:25:19.601+0000] {standard_task_runner.py:63} INFO - Started process 8345 to run task
+[2024-04-18T05:25:19.604+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagExtract', 'persistData', 'manual__2024-04-18T05:25:12.415217+00:00', '--job-id', '367', '--raw', '--subdir', 'DAGS_FOLDER/ExtractApi.py', '--cfg-path', '/tmp/tmp1zl_5fla']
+[2024-04-18T05:25:19.607+0000] {standard_task_runner.py:91} INFO - Job 367: Subtask persistData
+[2024-04-18T05:25:19.797+0000] {task_command.py:426} INFO - Running <TaskInstance: dagExtract.persistData manual__2024-04-18T05:25:12.415217+00:00 [running]> on host 0761b779d565
+[2024-04-18T05:25:19.965+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagExtract' AIRFLOW_CTX_TASK_ID='persistData' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T05:25:12.415217+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-18T05:25:12.415217+00:00'
+[2024-04-18T05:25:19.974+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T05:25:20.067+0000] {logging_mixin.py:188} INFO - Persisting Brewery... 
+ Path: datalake/bronze/20240418.json
+[2024-04-18T05:25:20.074+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-18T05:25:20.074+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T05:25:20.085+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagExtract, task_id=persistData, execution_date=20240418T052512, start_date=20240418T052519, end_date=20240418T052520
+[2024-04-18T05:25:20.182+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T05:25:20.236+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T05:25:20.346+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

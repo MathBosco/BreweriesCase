@@ -1,0 +1,1 @@
+[2024-04-18T05:03:51.568+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: dagPartition.waitExtract scheduled__2024-04-18T02:30:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

@@ -3,6 +3,13 @@ from datetime import datetime
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 import pandas as pd
+import sys
+import os
+
+scripts_dir = os.path.join(os.path.dirname(__file__), '..', 'dags')
+sys.path.append(scripts_dir)
+
+from Utils import *
 
 # Read data from Silver Layer
 def ReadSilver():
@@ -57,22 +64,9 @@ def GroupByLocation(ti):
     # Persist view on gold layer
     vw_location.to_parquet('datalake/gold/vwByLocation', partition_cols=['dt_process'], compression='gzip')
 
-# Function to add column 'Data processed'
-def AddDtProcess(dataframe):
-    df = dataframe
 
-    # Get actual date
-    dt = datetime.now()
 
-    # Format date
-    format_dt = dt.strftime('%Y%m%d')
-
-    # Add colum data processed
-    df = df.assign(dt_process=format_dt)
-
-    return df
-
-with DAG('dagAggregations', start_date= datetime(2024,4,15,6, 0, 0),  schedule_interval='@daily', catchup = False) as dag:
+with DAG('dagAggregations', start_date= datetime(2024,4,15,8, 0, 0),  schedule_interval='@daily', catchup = False) as dag:
 
     # Read data
     input = PythonOperator(
