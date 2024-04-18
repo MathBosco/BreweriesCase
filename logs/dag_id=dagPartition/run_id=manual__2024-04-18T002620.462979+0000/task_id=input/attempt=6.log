@@ -1,0 +1,72 @@
+[2024-04-18T00:43:10.120+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T00:43:10.150+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dagPartition.input manual__2024-04-18T00:26:20.462979+00:00 [queued]>
+[2024-04-18T00:43:10.160+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dagPartition.input manual__2024-04-18T00:26:20.462979+00:00 [queued]>
+[2024-04-18T00:43:10.162+0000] {taskinstance.py:2303} INFO - Starting attempt 6 of 6
+[2024-04-18T00:43:10.180+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): input> on 2024-04-18 00:26:20.462979+00:00
+[2024-04-18T00:43:10.189+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2247) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-18T00:43:10.191+0000] {standard_task_runner.py:63} INFO - Started process 2249 to run task
+[2024-04-18T00:43:10.194+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dagPartition', 'input', 'manual__2024-04-18T00:26:20.462979+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/PartitionLocation.py', '--cfg-path', '/tmp/tmpxu77faq0']
+[2024-04-18T00:43:10.197+0000] {standard_task_runner.py:91} INFO - Job 157: Subtask input
+[2024-04-18T00:43:10.286+0000] {task_command.py:426} INFO - Running <TaskInstance: dagPartition.input manual__2024-04-18T00:26:20.462979+00:00 [running]> on host 0761b779d565
+[2024-04-18T00:43:10.623+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dagPartition' AIRFLOW_CTX_TASK_ID='input' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:26:20.462979+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-18T00:26:20.462979+00:00'
+[2024-04-18T00:43:10.626+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T00:43:10.661+0000] {python.py:237} INFO - Done. Returned value was:                                       id  ...                          street
+0   5128df48-79fc-4f0f-8b52-d06be54d0cec  ...                  1716 Topeka St
+1   9c5a66c8-cc13-416f-a5d9-0a769c87d318  ...           407 Radam Ln Ste F200
+2   34e8c68b-6146-453f-a4b9-1f6cd99a5ada  ...             8100 Washington Ave
+3   ef970757-fe42-416f-931d-722451f1f59c  ...                       1501 E St
+4   6d14b220-8926-4521-8d19-b98a2d6ec3db  ...                   62970 18th St
+5   e2e78bd8-80ff-4a61-a65c-3bfbd9d76ce2  ...     1135 NW Galveston Ave Ste B
+6   e432899b-7f58-455f-9c7b-9a6e2130a1e0  ...             1411 NW Flanders St
+7   9f1852da-c312-42da-9a31-097bac81c4c0  ...                62950 NE 18th St
+8   ea4f30c0-bce6-416b-8904-fab4055a7362  ...                826 W Bannock St
+9   1988eb86-f0a2-4674-ba04-02454efa0d31  ...                  2620 Walnut St
+10  1ecc330f-6275-42a5-b14e-00adbed62752  ...                     490 Mill St
+11  7531dbd8-afc9-4b5b-95bc-7ece7f2c0bf3  ...                   400 Brown Cir
+12  03118499-a3d0-4c22-860d-4529509ae095  ...           294793 US Highway 101
+13  5ae467af-66dc-4d7f-8839-44228f89b596  ...             1304 Scott St Ste D
+14  4ffda196-dd59-44a5-9eeb-5f7fd4b58f5a  ...                    1043 Park St
+15  42aa37d5-8384-4ffe-8c81-7c982eff0384  ...                    2005 2nd Ave
+16  232e8f62-9afc-45f5-b4bc-582c26b5c43b  ...               491 Washington St
+17  08f78223-24f8-4b71-b381-ea19a5bd82df  ...               6820 Bourgeois Rd
+18  58293321-14ae-49d7-9a7b-08436c9e63a6  ...                   141 E Main St
+19  e5f3e72a-fee2-4813-82cf-f2e53b439ae6  ...                  Unnamed Street
+20  d81ff708-b5d2-478f-af6a-6d40f5beb9ac  ...            80 Earhart Dr Ste 20
+21  fb94830f-6196-4f59-9189-c9060b778085  ...            3000 E Ray Rd Bldg 6
+22  0faa0fb2-fffa-416d-9eab-46f67477c8ef  ...                            None
+23  e54c2f02-acd6-4172-861d-fcfa54c8701a  ...                2416 Meridian St
+24  d5cb896d-3e99-4e19-9693-5e06ce987e53  ...                 3090 Shirley Dr
+25  06e9fffb-e820-45c9-b107-b52b51013e8f  ...                     820 Main St
+26  50521ef7-f543-4c5d-98b1-0d0ee1a2be01  ...            141 E 4th St Ste LL2
+27  950180bd-29c9-46b3-ad0c-e6f09799ec7f  ...                  7391 Forbes Rd
+28  45119c56-345b-4adc-b481-c5cf7bfe98c4  ...       250 Mill St, Suite PW3101
+29  936c3d7e-5d54-4459-b72c-117cdda059b4  ...           6410 SE Milwaukie Ave
+30  5c53b314-ebab-4e3e-89be-e4139d9318ae  ...  1323 Capital Blvd 1323 R and D
+31  4788221a-a03b-458c-9084-4cadd69ade6d  ...       31125 Via Colinas Ste 907
+32  b7b68d22-5045-4501-b9bf-ec94946eaffc  ...                            None
+33  4b677b60-fef1-42e2-90ef-dadc1bd7fb06  ...                  2801 Walnut St
+34  6c53984f-fac1-4ea7-9c44-44e25897c71a  ...             133 N Main St Ste 7
+35  85192a9c-58a4-48c3-bd9d-496d09d22aa3  ...                  753 Reading Rd
+36  284b44f8-6ccb-4cd6-8d06-f2ad882a47c3  ...                413 S Bedford St
+37  ee6d39c6-092f-4623-8099-5b8643f70dbe  ...                    9542 Main St
+38  d35b40b0-a3ff-4878-a6ee-9caa2149b521  ...          1146 colonel Joshua Ct
+39  84bd3b3c-bd2d-4e07-bc31-b43a8c8ebf4c  ...                 322 E Court Ave
+40  f41a0c47-ba9b-4547-bfed-fcbefe0fc74b  ...          1129 Irvin Garrish Hwy
+41  84d621c4-81a5-44e6-aca7-1566c2e67cc0  ...                  11109 Plank Rd
+42  896f26a1-d80e-4790-9287-026a86c1799d  ...                2010 A State Ave
+43  46839a79-b7bf-4733-b91b-ce116d062a57  ...            100 B South Olive St
+44  1a1b2165-73ed-40aa-b89b-56794d140f22  ...                   342 E Ward St
+45  fe6b9893-b93e-43d5-a9f6-3e0c89a3f13c  ...                            None
+46  b51f3cdf-60ff-4ae1-94a7-76906c7d62eb  ...                 5725 Miller Ave
+47  add7f978-942e-4d56-b209-c80837a51d69  ...                 5417 Oakley Ave
+48  dbde8235-2b55-4d8b-8b1c-438155abe104  ...              1301 S Chestnut St
+49  4f4b5b34-d572-4dff-a18f-47e507c073e6  ...      2045 N Forbes Blvd Ste 105
+
+[50 rows x 16 columns]
+[2024-04-18T00:43:10.734+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T00:43:10.794+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dagPartition, task_id=input, execution_date=20240418T002620, start_date=20240418T004310, end_date=20240418T004310
+[2024-04-18T00:43:10.849+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T00:43:10.906+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T00:43:10.912+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
