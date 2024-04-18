@@ -5196,3 +5196,24 @@ NameError: name 'GroupByCountry' is not defined
 [2024-04-18T17:58:08.180+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:08.180+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-04-18T17:58:08.203+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:08.202+0000] {dag.py:3954} INFO - Setting next_dagrun for dagAggregations to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
 [2024-04-18T17:58:08.225+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/AggData.py took 0.760 seconds
+[2024-04-18T17:58:38.325+0000] {processor.py:161} INFO - Started process (PID=15126) to work on /opt/airflow/dags/AggData.py
+[2024-04-18T17:58:38.326+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/AggData.py for tasks to queue
+[2024-04-18T17:58:38.328+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:38.328+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/AggData.py
+[2024-04-18T17:58:39.026+0000] {processor.py:840} INFO - DAG(s) 'dagAggregations' retrieved from /opt/airflow/dags/AggData.py
+[2024-04-18T17:58:39.051+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:39.050+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:58:39.079+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:39.078+0000] {dag.py:3954} INFO - Setting next_dagrun for dagAggregations to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:58:39.103+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/AggData.py took 0.786 seconds
+[2024-04-18T17:59:10.080+0000] {processor.py:161} INFO - Started process (PID=15190) to work on /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:10.081+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/AggData.py for tasks to queue
+[2024-04-18T17:59:10.083+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:10.083+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:10.683+0000] {processor.py:840} INFO - DAG(s) 'dagAggregations' retrieved from /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:10.704+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:10.703+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:59:10.732+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:10.731+0000] {dag.py:3954} INFO - Setting next_dagrun for dagAggregations to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:59:10.755+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/AggData.py took 0.687 seconds
+[2024-04-18T17:59:42.607+0000] {processor.py:161} INFO - Started process (PID=15250) to work on /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:42.608+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/AggData.py for tasks to queue
+[2024-04-18T17:59:42.611+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:42.611+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:43.212+0000] {processor.py:840} INFO - DAG(s) 'dagAggregations' retrieved from /opt/airflow/dags/AggData.py
+[2024-04-18T17:59:43.234+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:43.233+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:59:43.260+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:43.260+0000] {dag.py:3954} INFO - Setting next_dagrun for dagAggregations to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:59:43.284+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/AggData.py took 0.686 seconds

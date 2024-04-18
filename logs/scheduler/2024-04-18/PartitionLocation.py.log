@@ -7798,3 +7798,24 @@ NameError: name 'TriggerDagRunOperator' is not defined
 [2024-04-18T17:58:03.336+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:03.336+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-04-18T17:58:03.365+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:03.365+0000] {dag.py:3954} INFO - Setting next_dagrun for dagPartition to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
 [2024-04-18T17:58:03.393+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/PartitionLocation.py took 0.813 seconds
+[2024-04-18T17:58:33.885+0000] {processor.py:161} INFO - Started process (PID=15081) to work on /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:58:33.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/PartitionLocation.py for tasks to queue
+[2024-04-18T17:58:33.890+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:33.889+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:58:34.593+0000] {processor.py:840} INFO - DAG(s) 'dagPartition' retrieved from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:58:34.614+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:34.613+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:58:34.654+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:58:34.654+0000] {dag.py:3954} INFO - Setting next_dagrun for dagPartition to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:58:34.682+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/PartitionLocation.py took 0.807 seconds
+[2024-04-18T17:59:05.314+0000] {processor.py:161} INFO - Started process (PID=15145) to work on /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:05.316+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/PartitionLocation.py for tasks to queue
+[2024-04-18T17:59:05.318+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:05.318+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:05.922+0000] {processor.py:840} INFO - DAG(s) 'dagPartition' retrieved from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:05.947+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:05.946+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:59:05.974+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:05.974+0000] {dag.py:3954} INFO - Setting next_dagrun for dagPartition to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:59:06.060+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/PartitionLocation.py took 0.755 seconds
+[2024-04-18T17:59:36.916+0000] {processor.py:161} INFO - Started process (PID=15209) to work on /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:36.918+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/PartitionLocation.py for tasks to queue
+[2024-04-18T17:59:36.921+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:36.920+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:37.588+0000] {processor.py:840} INFO - DAG(s) 'dagPartition' retrieved from /opt/airflow/dags/PartitionLocation.py
+[2024-04-18T17:59:37.607+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:37.607+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-18T17:59:37.634+0000] {logging_mixin.py:188} INFO - [2024-04-18T17:59:37.634+0000] {dag.py:3954} INFO - Setting next_dagrun for dagPartition to 2024-04-18 00:00:00+00:00, run_after=2024-04-19 00:00:00+00:00
+[2024-04-18T17:59:37.659+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/PartitionLocation.py took 0.752 seconds
